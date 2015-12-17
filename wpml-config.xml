@@ -1,0 +1,85 @@
+<wpml-config>
+	<custom-fields>
+		<custom-field action="translate">enclosure</custom-field>
+		<custom-field action="copy">original_post_id</custom-field>
+		<custom-field action="copy">pre_import_post_id</custom-field>
+		<custom-field action="copy">pre_import_post_parent</custom-field>
+		<custom-field action="copy">standard_link_url_field</custom-field>
+		<custom-field action="copy">standard_seo_post_level_layout</custom-field>
+		<custom-field action="copy">standard_seo_post_meta_description</custom-field>
+		<custom-field action="copy">_attachment_original_parent_id</custom-field>
+		<custom-field action="copy">_format_audio_embed</custom-field>
+		<custom-field action="copy">_format_image</custom-field>
+		<custom-field action="copy">_format_link_url</custom-field>
+		<custom-field action="copy">_format_quote_source_name</custom-field>
+		<custom-field action="copy">_format_quote_source_url</custom-field>
+		<custom-field action="copy">_format_url</custom-field>
+		<custom-field action="copy">_format_video_embed</custom-field>
+		<custom-field action="copy">_menu_item_classes</custom-field>
+		<custom-field action="copy">_menu_item_menu_item_parent</custom-field>
+		<custom-field action="copy">_menu_item_object</custom-field>
+		<custom-field action="copy">_menu_item_object_id</custom-field>
+		<custom-field action="copy">_menu_item_target</custom-field>
+		<custom-field action="copy">_menu_item_type</custom-field>
+		<custom-field action="copy">_menu_item_url</custom-field>
+		<custom-field action="copy">_menu_item_xfn</custom-field>
+		<custom-field action="ignore">_oembed_2ba42ff1f7c69031e667c63491ab6fe7</custom-field>
+		<custom-field action="ignore">_oembed_2bef95281c5cee1117fe6e53ff24e170</custom-field>
+		<custom-field action="ignore">_oembed_9fcc86d7d9398ff736577f922307f64d</custom-field>
+		<custom-field action="ignore">_oembed_37fdfe862c13c46a93be2921279bf675</custom-field>
+		<custom-field action="ignore">_oembed_43bfc4d404d9bf9124c3764564f57a88</custom-field>
+		<custom-field action="ignore">_oembed_29351fff85c1be1d1e9a965a0332a861</custom-field>
+		<custom-field action="ignore">_oembed_4321638fc1a6fee26443f7fe8a70a871</custom-field>
+		<custom-field action="ignore">_oembed_366237792d32461d0052efb2edec37f5</custom-field>
+		<custom-field action="ignore">_oembed_time_2ba42ff1f7c69031e667c63491ab6fe7</custom-field>
+		<custom-field action="ignore">_oembed_time_2bef95281c5cee1117fe6e53ff24e170</custom-field>
+		<custom-field action="ignore">_oembed_time_43bfc4d404d9bf9124c3764564f57a88</custom-field>
+		<custom-field action="ignore">_publicize_pending</custom-field>
+		<custom-field action="translate">_wp_attachment_context</custom-field>
+		<custom-field action="copy">_wp_attachment_custom_header_last_used_boron</custom-field>
+		<custom-field action="translate">_wp_attachment_image_alt</custom-field>
+		<custom-field action="copy">_wp_attachment_is_custom_header</custom-field>
+		<custom-field action="copy">_wp_old_slug</custom-field>
+		<custom-field action="translate">_wp_trash_meta_comments_status</custom-field>
+		<custom-field action="translate">_wp_trash_meta_status</custom-field>
+		<custom-field action="copy">_wp_trash_meta_time</custom-field>
+
+	</custom-fields>
+	<language-switcher-settings>
+		<key name="icl_lang_sel_config">
+			<key name="font-current-normal">#444444</key>
+			<key name="font-current-hover">#000000</key>
+			<key name="background-current-normal">#ffffff</key>
+			<key name="background-current-hover">#eeeeee</key>
+			<key name="font-other-normal">#444444</key>
+			<key name="font-other-hover">#000000</key>
+			<key name="background-other-normal">#ffffff</key>
+			<key name="background-other-hover">#eeeeee</key>
+			<key name="border">#cdcdcd</key>
+		</key>
+		<key name="icl_lang_sel_footer_config">
+			<key name="font-current-normal">#444444</key>
+			<key name="font-current-hover">#000000</key>
+			<key name="background-current-normal">#ffffff</key>
+			<key name="background-current-hover">#eeeeee</key>
+			<key name="font-other-normal">#444444</key>
+			<key name="font-other-hover">#000000</key>
+			<key name="background-other-normal">#ffffff</key>
+			<key name="background-other-hover">#eeeeee</key>
+			<key name="border">#cdcdcd</key>
+		</key>    
+		<key name="icl_language_switcher_sidebar">0</key>  
+		<key name="icl_widget_title_show">0</key>
+		<key name="icl_lang_sel_type">dropdown</key>
+		<key name="icl_lso_link_empty">0</key>
+		<key name="icl_lso_flags">0</key>
+		<key name="icl_lso_native_lang">1</key>
+		<key name="icl_lso_display_lang">1</key>
+		<key name="icl_lang_sel_footer">0</key>
+		<key name="icl_post_availability">0</key>
+		<key name="icl_post_availability_position">below</key>
+		<key name="icl_post_availability_text">This post is also available in: %s</key>    
+	</language-switcher-settings>    
+</wpml-config>
+
+

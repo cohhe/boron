@@ -1,0 +1,971 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boron v1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-11-30 11:47:44+0000\n"
+"Last-Translator: smaids <smaids2007@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:17
+#@ boron
+msgid "404"
+msgstr ""
+
+#: 404.php:21
+#@ boron
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: comments.php:27
+#, php-format
+#@ boron
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:34
+#: comments.php:52
+#@ boron
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:35
+#: comments.php:53
+#@ boron
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:36
+#: comments.php:54
+#@ boron
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:59
+#@ boron
+msgid "Comments are closed."
+msgstr ""
+
+#: content-page.php:18
+#@ boron
+msgid "Pages:"
+msgstr ""
+
+#: content-none.php:12
+#@ boron
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:18
+#, php-format
+#@ boron
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:22
+#@ boron
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: content-none.php:27
+#@ boron
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: functions.php:558
+#, php-format
+#@ boron
+msgid "Page %s"
+msgstr ""
+
+#: inc/back-compat.php:41
+#: inc/back-compat.php:53
+#: inc/back-compat.php:68
+#, php-format
+#@ boron
+msgid "Boron 1.0 requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
+msgstr ""
+
+#: inc/customizer.php:19
+#: inc/customizer.php:20
+#@ boron
+msgid "Background may only be visible on wide screens."
+msgstr ""
+
+#: inc/customizer.php:28
+#@ boron
+msgid "Site Title Color"
+msgstr ""
+
+#: inc/customizer.php:31
+#@ boron
+msgid "Display Site Title &amp; Tagline"
+msgstr ""
+
+#: inc/customizer.php:532
+#@ boron
+msgid "Boron 1.0"
+msgstr ""
+
+#: inc/customizer.php:535
+#, php-format
+#@ boron
+msgid "The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by the <a href=\"%1$s\">featured</a> tag; you can change the tag and layout in <a href=\"%2$s\">Appearance &rarr; Customize</a>. If no posts match the tag, <a href=\"%3$s\">sticky posts</a> will be displayed instead."
+msgstr ""
+
+#: inc/customizer.php:536
+#, php-format
+#@ boron
+msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Boron 1.0 uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
+msgstr ""
+
+#: inc/customizer.php:537
+#, php-format
+#@ boron
+msgid "For an in-depth tutorial, and more tips and tricks, visit the <a href=\"%s\">Boron 1.0 documentation</a>."
+msgstr ""
+
+#: inc/metaboxes/layouts.php:8
+#@ boron
+msgid "Layouts"
+msgstr ""
+
+#: inc/metaboxes/layouts.php:15
+#@ boron
+msgid "Layout type"
+msgstr ""
+
+#: inc/template-tags.php:87
+#, php-format
+#@ boron
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr ""
+
+#: inc/customizer.php:471
+#@ boron
+msgid "Documentation"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2664
+#@ boron
+msgid "Activate"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2510
+#@ boron
+msgid "Type"
+msgstr ""
+
+#: inc/customizer.php:389
+#@ boron
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer.php:120
+#@ boron
+msgid "Favicon"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:303
+#: functions.php:655
+#@ boron
+msgid "Install Required Plugins"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:304
+#: functions.php:656
+#@ boron
+msgid "Install Plugins"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:305
+#: functions.php:657
+#, php-format
+#@ boron
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:306
+#: functions.php:658
+#@ boron
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:308
+#: functions.php:659
+#, php-format
+#@ boron
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:313
+#: functions.php:660
+#, php-format
+#@ boron
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:318
+#, php-format
+#@ boron
+msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:323
+#: functions.php:665
+#, php-format
+#@ boron
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:328
+#, php-format
+#@ boron
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:333
+#, php-format
+#@ boron
+msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:338
+#: functions.php:662
+#, php-format
+#@ boron
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:343
+#: functions.php:663
+#, php-format
+#@ boron
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:348
+#, php-format
+#@ boron
+msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:353
+#: functions.php:667
+#@ boron
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:358
+#@ boron
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:363
+#@ boron
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:368
+#: functions.php:669
+#@ boron
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:369
+#@ boron
+msgid "Return to the dashboard"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:370
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3047
+#: functions.php:670
+#@ boron
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:372
+#, php-format
+#@ boron
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:373
+#, php-format
+#@ boron
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:374
+#, php-format
+#@ boron
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:375
+#@ boron
+msgid "Dismiss this notice"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:376
+#@ boron
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:494
+#@ boron
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:495
+#@ boron
+msgid "Update Required"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:612
+#@ boron
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:806
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3465
+#@ boron
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:921
+#@ boron
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:921
+#: functions/tgm-activation/class-tgm-plugin-activation.php:925
+#@ boron
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:925
+#@ boron
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:1110
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2864
+#@ boron
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:1932
+#, php-format
+#@ boron
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2213
+#@ boron
+msgid "Required"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2216
+#@ boron
+msgid "Recommended"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2233
+#@ boron
+msgid "WordPress Repository"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2237
+#@ boron
+msgid "External Source"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2241
+#@ boron
+msgid "Pre-Packaged"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2260
+#@ boron
+msgid "Not Installed"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2264
+#@ boron
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2266
+#@ boron
+msgid "Active"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2272
+#@ boron
+msgid "Required Update not Available"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2275
+#@ boron
+msgid "Requires Update"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2278
+#@ boron
+msgid "Update recommended"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2286
+#, php-format
+#@ boron
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2335
+#, php-format
+#@ boron
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2339
+#, php-format
+#@ boron
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2343
+#, php-format
+#@ boron
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2347
+#, php-format
+#@ boron
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2440
+#@ boron
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2448
+#@ boron
+msgid "Installed version:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2456
+#@ boron
+msgid "Minimum required version:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2468
+#@ boron
+msgid "Available version:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2492
+#, php-format
+#@ boron
+msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2508
+#@ boron
+msgid "Plugin"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2509
+#@ boron
+msgid "Source"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2514
+#@ boron
+msgid "Version"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2515
+#@ boron
+msgid "Status"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2539
+#, php-format
+#@ boron
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2545
+#, php-format
+#@ boron
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2551
+#, php-format
+#@ boron
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2622
+#@ boron
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2655
+#@ boron
+msgid "Install"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2661
+#@ boron
+msgid "Update"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2725
+#@ boron
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2727
+#@ boron
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2850
+#@ boron
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2868
+#: functions/tgm-activation/class-tgm-plugin-activation.php:371
+#@ boron
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3046
+#@ boron
+msgid "Plugin activation failed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3385
+#, php-format
+#@ boron
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3389
+#, php-format
+#@ boron
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3390
+#, php-format
+#@ boron
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3394
+#@ boron
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
+#, php-format
+#@ boron
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#@ boron
+msgid "Show Details"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#@ boron
+msgid "Hide Details"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3396
+#@ boron
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3397
+#, php-format
+#@ boron
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3401
+#@ boron
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#, php-format
+#@ boron
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3403
+#@ boron
+msgid "All installations have been completed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3404
+#, php-format
+#@ boron
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions.php:661
+#, php-format
+#@ boron
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:664
+#, php-format
+#@ boron
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:666
+#, php-format
+#@ boron
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:668
+#@ boron
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:671
+#, php-format
+#@ boron
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: inc/customizer.php:39
+#@ boron
+msgid "General settings"
+msgstr ""
+
+#: inc/customizer.php:40
+#@ boron
+msgid "You can configure your general theme settings here"
+msgstr ""
+
+#: inc/customizer.php:55
+#@ boron
+msgid "Scroll to top"
+msgstr ""
+
+#: inc/customizer.php:56
+#@ boron
+msgid "Do you want to enable \"Scroll to Top\" button?"
+msgstr ""
+
+#: inc/customizer.php:472
+#@ boron
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: inc/customizer.php:473
+#@ boron
+msgid "Join us on Facebook"
+msgstr ""
+
+#: inc/customizer.php:474
+#@ boron
+msgid "Join us on Google+"
+msgstr ""
+
+#: inc/customizer.php:475
+#@ boron
+msgid "Cohhe.com"
+msgstr ""
+
+#: inc/template-tags.php:89
+#, php-format
+#@ boron
+msgid "<span class=\"glyphicon glyphicon-chevron-left\"></span><span class=\"post-left\">%title</span>"
+msgstr ""
+
+#: inc/template-tags.php:90
+#, php-format
+#@ boron
+msgid "<span class=\"glyphicon glyphicon-chevron-right\"></span><span class=\"post-right\">%title</span>"
+msgstr ""
+
+#: comments.php:68
+#@ boron
+msgid "Leave a reply"
+msgstr ""
+
+#: comments.php:69
+#@ boron
+msgid "Your email adress will not be published. Required fields are marked*"
+msgstr ""
+
+#: comments.php:70
+#@ boron
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:71
+#@ boron
+msgid "Comment*"
+msgstr ""
+
+#: comments.php:75
+#@ boron
+msgid "Name*"
+msgstr ""
+
+#: comments.php:77
+#@ boron
+msgid "E-mail*"
+msgstr ""
+
+#: comments.php:79
+#@ boron
+msgid "Website"
+msgstr ""
+
+#: content-aside.php:32
+#: content-audio.php:32
+#: content-gallery.php:32
+#: content-image.php:32
+#: content-link.php:32
+#: content-quote.php:32
+#: content-video.php:32
+#: content.php:34
+#: functions.php:317
+#: functions.php:366
+#@ boron
+msgid "ago"
+msgstr ""
+
+#: functions.php:153
+#@ boron
+msgid "Tags"
+msgstr ""
+
+#: functions.php:175
+#, php-format
+#@ boron
+msgid "<span class=\"%1$s\"></span> %2$s"
+msgstr ""
+
+#: archive.php:52
+#: author.php:52
+#: category.php:41
+#: image.php:23
+#: index.php:48
+#: search.php:39
+#: tag.php:45
+#: taxonomy-post_format.php:51
+#@ boron
+msgid "No more posts to show."
+msgstr "test "
+
+#: functions.php:369
+#@ boron
+msgid "Posted"
+msgstr ""
+
+#: functions.php:375
+#@ boron
+msgid "Comments"
+msgstr ""
+
+#: header.php:63
+#: header.php:71
+#@ boron
+msgid "Site logo"
+msgstr ""
+
+#: inc/customizer.php:33
+#@ boron
+msgid "Side navigation logo"
+msgstr ""
+
+#: inc/customizer.php:47
+#@ boron
+msgid "Side navigation settings"
+msgstr ""
+
+#: inc/customizer.php:48
+#@ boron
+msgid "You can configure your theme side navigation settings here."
+msgstr ""
+
+#: inc/customizer.php:75
+#: inc/customizer.php:83
+#@ boron
+msgid "Post background"
+msgstr ""
+
+#: inc/customizer.php:76
+#@ boron
+msgid "Do you want your own post background? You can change it here."
+msgstr ""
+
+#: inc/customizer.php:92
+#@ boron
+msgid "Post comments"
+msgstr ""
+
+#: inc/customizer.php:93
+#@ boron
+msgid "Choose where to show post comments."
+msgstr ""
+
+#: inc/customizer.php:112
+#@ boron
+msgid "Navigation background"
+msgstr ""
+
+#: inc/customizer.php:113
+#@ boron
+msgid "Do you want your own navigation background? You can change it here."
+msgstr ""
+
+#: inc/customizer.php:129
+#@ boron
+msgid "Navigation title"
+msgstr ""
+
+#: inc/customizer.php:130
+#@ boron
+msgid "Title for the side navigation."
+msgstr ""
+
+#: inc/customizer.php:149
+#@ boron
+msgid "Navigation description"
+msgstr ""
+
+#: inc/customizer.php:150
+#@ boron
+msgid "Description for the side navigation."
+msgstr ""
+
+#: inc/customizer.php:169
+#@ boron
+msgid "Button #1"
+msgstr ""
+
+#: inc/customizer.php:170
+#: inc/customizer.php:220
+#: inc/customizer.php:270
+#: inc/customizer.php:320
+#@ boron
+msgid "Settings for your button."
+msgstr ""
+
+#: inc/customizer.php:219
+#@ boron
+msgid "Button #2"
+msgstr ""
+
+#: inc/customizer.php:269
+#@ boron
+msgid "Button #3"
+msgstr ""
+
+#: inc/customizer.php:319
+#@ boron
+msgid "Button #4"
+msgstr ""
+
+#: inc/customizer.php:369
+#@ boron
+msgid "Extra text after social buttons"
+msgstr ""
+
+#: inc/customizer.php:370
+#@ boron
+msgid "Some extra text after social buttons."
+msgstr ""
+
+#: inc/customizer.php:390
+#@ boron
+msgid "Some copyright text at the bottom."
+msgstr ""
+
