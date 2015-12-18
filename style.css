@@ -1430,6 +1430,8 @@ body .post-password-form input[type=submit]:hover {
 
 .main-search-form {
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	background: rgba(250, 250, 250, 0.95);
@@ -2941,6 +2943,14 @@ article .entry-content table tr:nth-child(even) {
 /* Responsiveness */
 
 @media (max-width: 1200px) {
+	body .main-content article {
+		width: 33.33%;
+	}
+
+	.navigation-social .social-button {
+		width: auto;
+		padding: 0 5px;
+	}
 
 }
 
@@ -3044,21 +3054,30 @@ article .entry-content table tr:nth-child(even) {
 	.single-post-side-comments {
 		min-width: 300px;
 	}
+
+	.navigation-social {
+		display: none;
+	}
 }
 
 @media (max-width: 570px) {
-	.main-content article {
+	body .main-content article {
 		width: 50%;
 	}
 
 	body {
 		font-size: 13px;
 	}
+
+	.main-search-form .search-form {
+		width: 100%;
+		min-width: auto;
+	}
 }
 
 @media (max-width: 480px) {
-	.main-content article {
-		width: 100%;
+	body .main-content article {
+		width: 100% !important;
 	}
 
 	body {
