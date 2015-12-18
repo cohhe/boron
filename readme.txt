@@ -1,4 +1,4 @@
-Boron, Copyright 2015 Cohhe
+Boron, Copyright 2015 Cohhe https://cohhe.com
 Boron is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
