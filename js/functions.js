@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
 	}
 
 	function boron_load_posts() {
-		if ( jQuery('#current-post-page').val() == -1 || jQuery('body').hasClass('pull-content-to-side') || jQuery('body').hasClass('prevent-loading') ) {
+		if ( !WP_API_Settings.rest_api_status || jQuery('#current-post-page').val() == -1 || jQuery('body').hasClass('pull-content-to-side') || jQuery('body').hasClass('prevent-loading') ) {
 			return;
 		};
 		jQuery('.posts-loading').addClass('start');
@@ -190,7 +190,7 @@ jQuery(document).ready(function($) {
 		if ( jQuery('body').hasClass('show-search') ) {
 			jQuery('body').removeClass('show-search');
 		};
-		if ( typeof jQuery('#current-page-url').val() == 'undefined') {
+		if ( typeof jQuery('#current-page-url').val() == 'undefined' || ( jQuery('body').hasClass('search-results') && !jQuery('body').hasClass('pull-content-to-side') ) ) {
 			window.location.href = WP_API_Settings.home_url;
 		} else {
 			var href = jQuery('#current-page-url').val();

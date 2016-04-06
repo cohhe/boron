@@ -66,7 +66,7 @@ if ( post_password_required() ) {
 				'logged_in_as' => '',
 				'url' => '',
 				'title_reply'      => __( 'Leave a reply', 'boron'),
-				'comment_notes_before' => '<span class="comment-form-before">' . __('Your email adress will not be published. Required fields are marked*', 'boron') . '</span>',
+				'comment_notes_before' => '<span class="comment-form-before">' . __('Your email address will not be published. Required fields are marked*', 'boron') . '</span>',
 				'label_submit'    => __( 'Post Comment', 'boron'),
 				'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __('Comment*', 'boron') . '">' . '</textarea></p>',
 				'fields' => array(

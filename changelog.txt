@@ -1,4 +1,19 @@
 Boron changelog
 
+= Version 1.1 =
+* Some fixes and improvements
+* Escaped values
+* Enqueued html5 in functions.php
+* Added missing translation
+* Removed unnecessary code
+* Fixed broken styles
+* A way to get back to home from search
+* Removed close icon from static page
+* Added some documentation in functions.php
+* Fixed 404 page responsiveness
+* Added post pagination
+* Added title-tag support
+* Fixed broken links and spelling issues
+
 = Version 1.0 =
 * Initial release

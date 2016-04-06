@@ -62,7 +62,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_scrolltotop',
 		array(
-			'label'      => 'Scroll to top',
+			'label'      => __( 'Scroll to top', 'boron' ),
 			'section'    => 'boron_general_scrolltotop',
 			'type'       => 'checkbox',
 		)
@@ -98,7 +98,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_comment_location',
 		array(
-			'label'      => 'Post comments position',
+			'label'      => __( 'Post comments position', 'boron' ),
 			'section'    => 'boron_post_comments',
 			'type'       => 'select',
 			'choices'    => array( 'side' => 'Right side', 'bottom' => 'After post content' )
@@ -118,7 +118,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_grid_columns',
 		array(
-			'label'      => 'Post grid size',
+			'label'      => __( 'Post grid size', 'boron' ),
 			'section'    => 'boron_grid_size',
 			'type'       => 'select',
 			'choices'    => array(
@@ -143,7 +143,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'boron_navigation_background', array( 'sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/navigation-bg.png' ) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'boron_navigation_background', array(
-		'label'    => __( 'Favicon', 'boron' ),
+		'label'    => __( 'Navigation background', 'boron' ),
 		'section'  => 'boron_navigation_bg',
 		'settings' => 'boron_navigation_background',
 	) ) );
@@ -162,7 +162,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_title',
 		array(
-			'label'      => 'Navigation title',
+			'label'      => __( 'Navigation title', 'boron' ),
 			'section'    => 'boron_navigation_title',
 			'type'       => 'text',
 		)
@@ -182,7 +182,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_description',
 		array(
-			'label'      => 'Navigation description',
+			'label'      => __( 'Navigation description', 'boron' ),
 			'section'    => 'boron_navigation_description',
 			'type'       => 'textarea',
 		)
@@ -201,7 +201,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button1_text',
 		array(
-			'label'      => 'Button #1 text',
+			'label'      => __( 'Button #1 text', 'boron' ),
 			'section'    => 'boron_navigation_button1',
 			'type'       => 'text',
 		)
@@ -211,7 +211,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button1_link',
 		array(
-			'label'      => 'Button #1 link',
+			'label'      => __( 'Button #1 link', 'boron' ),
 			'section'    => 'boron_navigation_button1',
 			'type'       => 'text',
 		)
@@ -230,7 +230,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button2_text',
 		array(
-			'label'      => 'Button #2 text',
+			'label'      => __( 'Button #2 text', 'boron' ),
 			'section'    => 'boron_navigation_button2',
 			'type'       => 'text',
 		)
@@ -240,7 +240,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button2_link',
 		array(
-			'label'      => 'Button #2 link',
+			'label'      => __( 'Button #2 link', 'boron' ),
 			'section'    => 'boron_navigation_button2',
 			'type'       => 'text',
 		)
@@ -259,7 +259,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button3_text',
 		array(
-			'label'      => 'Button #3 text',
+			'label'      => __( 'Button #3 text', 'boron' ),
 			'section'    => 'boron_navigation_button3',
 			'type'       => 'text',
 		)
@@ -269,7 +269,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button3_link',
 		array(
-			'label'      => 'Button #3 link',
+			'label'      => __( 'Button #3 link', 'boron' ),
 			'section'    => 'boron_navigation_button3',
 			'type'       => 'text',
 		)
@@ -288,7 +288,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button4_text',
 		array(
-			'label'      => 'Button #4 text',
+			'label'      => __( 'Button #4 text', 'boron' ),
 			'section'    => 'boron_navigation_button4',
 			'type'       => 'text',
 		)
@@ -298,7 +298,7 @@ function boron_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'boron_nav_button4_link',
 		array(
-			'label'      => 'Button #4 link',
+			'label'      => __( 'Button #4 link', 'boron' ),
 			'section'    => 'boron_navigation_button4',
 			'type'       => 'text',
 		)
@@ -436,7 +436,7 @@ function boron_contextual_help() {
 			'<ul>' .
 				'<li>' . sprintf( __( 'The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by the <a href="%1$s">featured</a> tag; you can change the tag and layout in <a href="%2$s">Appearance &rarr; Customize</a>. If no posts match the tag, <a href="%3$s">sticky posts</a> will be displayed instead.', 'boron' ), admin_url( '/edit.php?tag=featured' ), admin_url( 'customize.php' ), admin_url( '/edit.php?show_sticky=1' ) ) . '</li>' .
 				'<li>' . sprintf( __( 'Enhance your site design by using <a href="%s">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Boron 1.0 uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page.', 'boron' ), 'http://codex.wordpress.org/Post_Thumbnails#Setting_a_Post_Thumbnail' ) . '</li>' .
-				'<li>' . sprintf( __( 'For an in-depth tutorial, and more tips and tricks, visit the <a href="%s">Boron 1.0 documentation</a>.', 'boron' ), 'http://codex.wordpress.org/Boron' ) . '</li>' .
+				'<li>' . sprintf( __( 'For an in-depth tutorial, and more tips and tricks, visit the <a href="%s">Boron 1.0 documentation</a>.', 'boron' ), 'http://documentation.cohhe.com/boron' ) . '</li>' .
 			'</ul>',
 	) );
 }

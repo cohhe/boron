@@ -118,11 +118,18 @@ endif; // boron_setup
 add_action( 'after_setup_theme', 'boron_setup' );
 
 // Admin CSS
-function vh_admin_css() {
-	wp_enqueue_style( 'vh-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
+function boron_admin_css() {
+	wp_enqueue_style( 'boron-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
 }
-add_action('admin_head','vh_admin_css');
+add_action('admin_head','boron_admin_css');
 
+/**
+ * Returns list of tags for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_tag_list( $post_id, $return = false ) {
 	$entry_utility = '';
 	$posttags = get_the_tags( $post_id );
@@ -144,6 +151,13 @@ function boron_tag_list( $post_id, $return = false ) {
 	}
 }
 
+/**
+ * Returns list of tags with links for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_tag_link_list( $post_id, $return = false ) {
 	$entry_utility = '';
 	$posttags = get_the_tags( $post_id );
@@ -165,6 +179,13 @@ function boron_tag_link_list( $post_id, $return = false ) {
 	}
 }
 
+/**
+ * Returns list of categories for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_category_list( $post_id, $return = false ) {
 	$category_list = get_the_category_list( ', ', '', $post_id );
 	$entry_utility = '';
@@ -182,6 +203,13 @@ function boron_category_list( $post_id, $return = false ) {
 	}
 }
 
+/**
+ * Returns list of categories with links for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_category_link_list( $post_id, $return = false ) {
 	$category_list = get_the_category_list( ', ', '', $post_id );
 	$entry_utility = '';
@@ -199,6 +227,13 @@ function boron_category_link_list( $post_id, $return = false ) {
 	}
 }
 
+/**
+ * Returnscomment count for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_comment_count( $post_id ) {
 	$comments = wp_count_comments($post_id); 
 	return $comments->approved;
@@ -219,19 +254,6 @@ function boron_content_width() {
 add_action( 'template_redirect', 'boron_content_width' );
 
 /**
- * Prevent page scroll when clicking the More link
- *
- * @since Boron 1.0
- *
- * @return void
- */
-function remove_more_link_scroll( $link ) {
-	$link = preg_replace( '|#more-[0-9]+|', '', $link );
-	return $link;
-}
-add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
-
-/**
  * Register Lato Google font for Boron 1.0.
  *
  * @since Boron 1.0
@@ -249,6 +271,13 @@ function boron_font_url() {
 	return $font_url;
 }
 
+/**
+ * Limits the post excerpt for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_excerpt_length( $length ) {
 	return 20;
 }
@@ -302,38 +331,66 @@ function boron_scripts() {
 			'post_comments'  => get_theme_mod('boron_comment_location', 'side'),
 			'home_url'       => home_url(),
 			'dates'          => boron_get_archive(),
-			'post_tax'       => boron_get_post_tax()
+			'post_tax'       => boron_get_post_tax(),
+			'rest_api_status' => function_exists('register_api_field')
 		)
 	);
 
 	wp_add_inline_style( 'boron-style', boron_set_grid_size() );
+
+	// Add html5
+	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5.js' );
+	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'boron_scripts' );
 
+/**
+ * Sets the blog grid size for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_set_grid_size() {
 	$column_count = get_theme_mod( 'boron_grid_columns', '4' );
 
 	$column_width = 100/(int)$column_count;
 
-	return '.main-content article { width: ' . $column_width . '%; }';
+	return '.main-content article { width: ' . esc_attr($column_width) . '%; }';
 }
 
+/**
+ * Registers the rest api for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 add_action( 'rest_api_init', 'boron_register_extra_filters' );
 function boron_register_extra_filters() {
-    register_api_field( 'post',
-        'boron_extra',
-        array(
-            'get_callback'    => 'boron_get_extra_fields',
-            'update_callback' => null,
-            'schema'          => null,
-        )
-    );
+	if ( function_exists('register_api_field') ) {
+		register_api_field( 'post',
+	        'boron_extra',
+	        array(
+	            'get_callback'    => 'boron_get_extra_fields',
+	            'update_callback' => null,
+	            'schema'          => null,
+	        )
+	    );
+	}
 }
 
+/**
+ * Add extra return fields for rest api for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_get_extra_fields( $object, $field_name, $request ) {
-	if ( $object['featured_image'] ) {
-		$image_id = (int)$object['featured_image'];
-		$img = wp_get_attachment_image_src( $object['featured_image'], 'boron-medium-thumbnail' );
+	if ( isset($object['featured_media']) ) {
+		$image_id = (int)$object['featured_media'];
+		$img = wp_get_attachment_image_src( $object['featured_media'], 'boron-medium-thumbnail' );
 		$image_src = $img['0'];
 	} else {
 		$image_src = null;
@@ -352,6 +409,13 @@ function boron_get_extra_fields( $object, $field_name, $request ) {
     return $extra;
 }
 
+/**
+ * Returns an html of a single post for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_get_single_post( $post_id ) {
 	$output = '';
 
@@ -374,6 +438,7 @@ function boron_get_single_post( $post_id ) {
 		$output .= get_the_password_form( $post_id );
 	} else {
 		$output .= $content;
+		$output .= boron_get_single_post_pagination();
 	}
 
 	global $withcomments;
@@ -389,6 +454,51 @@ function boron_get_single_post( $post_id ) {
 	return $output;
 }
 
+/**
+ * Returns an html of a single post pagination for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
+function boron_get_single_post_pagination( $post_id = '' ) {
+	$output = '<nav class="nav-single blog">';
+		$prev_post = get_previous_post();
+		$next_post = get_next_post();
+
+		if (!empty( $prev_post )) {
+			$output .= '
+			<div class="nav_button left">
+				<h3 class="prev-post-text">'. __('Previous post', 'boron').'</h3>
+				<div class="prev-post-link">
+					<a href="'. get_permalink( $prev_post->ID ).'" class="prev_blog_post icon-left">'.get_the_title( $prev_post->ID ).'</a>
+				</div>
+			</div>';
+		}
+
+		if (!empty( $next_post )) {
+			$output .= '
+			<div class="nav_button right">
+				<h3 class="next-post-text">'.__('Next post', 'boron').'</h3>
+				<div class="next-post-link">
+					<a href="'. get_permalink( $next_post->ID ).'" class="next_blog_post icon-right">'. get_the_title( $next_post->ID ).'</a>
+				</div>
+			</div>';
+		}
+		$output .= '
+		<div class="clearfix"></div>
+	</nav>';
+
+	return $output;
+}
+
+/**
+ * Returns an html of a single post "sidebar" for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_get_single_post_side( $post_id ) {
 	$output = '';
 	$date = human_time_diff(get_the_time('U', $post_id), current_time('timestamp')) .  ' '.__('ago', 'boron');
@@ -406,15 +516,20 @@ function boron_get_single_post_side( $post_id ) {
 		$output .= '<span class="single-open-comment-count">' . $comments . '</span></div>';
 	}
 
-	$output .= '<div class="single-post-share">
-					<a href="http://twitter.com/share?url=' . get_the_permalink( $post_id ) . '&amp;text=' . urlencode( get_the_title( $post_id ) ) . '" class="social-icon icon-twitter" target="_blank"></a>
-					<a href="http://www.facebook.com/sharer.php?u=' . get_the_permalink( $post_id ) . '" class="social-icon icon-facebook" target="_blank"></a>
-					<a href="https://plus.google.com/share?url=' . get_the_permalink( $post_id ) . '" class="social-icon icon-gplus" target="_blank"></a>
-				</div>';
+	if ( function_exists('boron_get_share_icons') ) {
+		$output .= boron_get_share_icons( $post_id );
+	}
 
 	return $output;
 }
 
+/**
+ * Returns archive date for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_get_archive() {
 	$dates = array( 'year' => '', 'monthnum' => '', 'day' => '' );
 	if ( !is_date() ) {
@@ -428,6 +543,13 @@ function boron_get_archive() {
 	return $dates;
 }
 
+/**
+ * Returns taxonomies for a post for Boron 1.0.
+ *
+ * @since Boron 1.0
+ *
+ * @return string
+ */
 function boron_get_post_tax() {
 	if ( isset( $GLOBALS['wp_query']->queried_object->term_id ) ) {
 		$term_id = $GLOBALS['wp_query']->queried_object->term_id;
@@ -598,49 +720,12 @@ require get_template_directory() . '/inc/template-tags.php';
 // Add Theme Customizer functionality.
 require get_template_directory() . '/inc/customizer.php';
 
-function get_depth($postid) {
-	$depth = ($postid==get_option('page_on_front')) ? -1 : 0;
-	while ($postid > 0) {
-	$postid = get_post_ancestors($postid);
-	$postid = $postid[0];
-	$depth++;
-	}
-	return $depth;
-}
-
 function boron_navigation_link( $text, $url ) {
 	if ( !$text && !$url ) {
 		return false;
 	}
 
 	return '<a href="' . $url . '" class="social-button" target="_blank">' . $text . '</a>';
-}
-
-function boron_navigation_social() {
-	$button1 = boron_navigation_link( get_theme_mod('boron_nav_button1_text'), get_theme_mod('boron_nav_button1_link') );
-	$button2 = boron_navigation_link( get_theme_mod('boron_nav_button2_text'), get_theme_mod('boron_nav_button2_link') );
-	$button3 = boron_navigation_link( get_theme_mod('boron_nav_button3_text'), get_theme_mod('boron_nav_button3_link') );
-	$button4 = boron_navigation_link( get_theme_mod('boron_nav_button4_text'), get_theme_mod('boron_nav_button4_link') );
-	$social = '';
-
-	if ( $button1 || $button2 || $button3 || $button4 ) {
-		$social .= '<div class="navigation-social"><h6>'.__('Follow us', 'boron') . ':</h6>';
-			if ( $button1 ) {
-				$social .= $button1;
-			}
-			if ( $button2 ) {
-				$social .= $button2;
-			}
-			if ( $button3 ) {
-				$social .= $button3;
-			}
-			if ( $button4 ) {
-				$social .= $button4;
-			}
-		$social .= '</div>';
-	}
-
-	return $social;
 }
 
 /**
@@ -655,7 +740,7 @@ function boron_navigation_social() {
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function vh_register_required_plugins() {
+function boron_register_required_plugins() {
 
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
@@ -675,7 +760,7 @@ function vh_register_required_plugins() {
 			'name'     				=> 'WordPress REST API (Version 2)', // The plugin name
 			'slug'     				=> 'rest-api', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '2.0-beta7', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'version' 				=> '2.0-beta13', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
@@ -722,13 +807,4 @@ function vh_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'vh_register_required_plugins' );
-
-function boron_allowed_tags() {
-	global $allowedposttags;
-	$allowedposttags['script'] = array(
-		'type' => true,
-		'src' => true
-	);
-}
-add_action( 'init', 'boron_allowed_tags' );
+add_action( 'tgmpa_register', 'boron_register_required_plugins' );

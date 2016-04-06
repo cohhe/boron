@@ -43,7 +43,7 @@ global $boron_site_width;
 <?php
 	$post_bg = get_theme_mod('boron_post_background');
 	if ( $post_bg ) {
-		$background = 'background: url(' . $post_bg . ');';
+		$background = 'background: url(' . esc_url($post_bg) . ');';
 	} else {
 		$background = 'background-color: #999;';
 	}

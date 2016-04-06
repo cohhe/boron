@@ -4,10 +4,10 @@ Theme URI: https://cohhe.com/project-view/boron/
 Author: Cohhe
 Author URI: https://cohhe.com/
 Description: Enhance your story experience, by leveraging the power of Boron Wordpress Theme, built especially for telling great stories. It is the only free WordPress theme fully compatible with the Aesop Story Engine.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
+Tags: black, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
 Text Domain: boron 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -269,16 +269,6 @@ blockquote p {
 	padding: 0;
 	padding-left: 95px;
 	position: relative;
-}
-
-blockquote p:before {
-	content: '';
-	width: 49px;
-	height: 24px;
-	display: block;
-	background: url(images/quote-sign.png) no-repeat;
-	position: absolute;
-	left: 28px;
 }
 
 blockquote cite,
@@ -792,6 +782,25 @@ hr {
 	opacity: 1;
 }*/
 
+.nav-single.blog .nav_button {
+	width: 50%;
+	float: left;
+}
+
+.nav-single.blog .nav_button.right {
+	text-align: right;
+}
+
+.nav-single.blog .nav_button.right a:before {
+	float: right;
+	position: relative;
+    top: 3px;
+}
+
+.nav-single.blog .nav_button a {
+	text-decoration: none;
+}
+
 .single-image-container .single-post-meta {
 	border: 2px solid #fff;
 	width: auto;
@@ -1054,7 +1063,8 @@ hr {
 
 .pull-content-to-side .single-post-close,
 .pull-content-to-side .site-small-logo,
-.show-search .single-post-close {
+.show-search .single-post-close,
+body.search .single-post-close {
 	opacity: 1;
 
 	-webkit-transform: translateX(0px);
@@ -1064,7 +1074,13 @@ hr {
 	transform: translateX(0px);
 }
 
-.show-search .single-post-close {
+body.search .single-post-close .close-icon:before,
+body.search .single-post-close .close-icon:after {
+	background-color: #000;
+}
+
+.show-search .single-post-close,
+body.search .single-post-close {
 	z-index: 7;
 }
 
@@ -2496,7 +2512,7 @@ body.single:not(.single-service) #primary {
 	line-height: 35px;
 	text-align: center;
 	padding-top: 40px;
-	color: #fff;
+	color: #000;
 }
 
 .comments-container h3#reply-title {
@@ -2962,6 +2978,14 @@ article .entry-content table tr:nth-child(even) {
 
 @media (max-width: 991px) {
 
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+	body.error404 .page-header,
+	.error404 .content-area .page-content {
+		width: 100%;
+    	text-align: center;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
