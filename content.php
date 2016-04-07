@@ -29,14 +29,12 @@ if ( !is_single() ) {
 				} else {
 					echo '<span class="post-no-image"></span>';
 				}
-				echo '<div class="single-post-meta">';
-						boron_tag_list( get_the_ID() );
+				echo '<div class="single-post-information">';
 						boron_category_list( get_the_ID() );
-						echo '<span class="single-post-date icon-clock">'.human_time_diff(get_the_time('U',get_the_ID()),current_time('timestamp')) .  ' '.__('ago', 'boron').'</span>';
-						if ( comments_open( get_the_ID() ) ) {
-							echo '<span class="single-post-like icon-chat">' . boron_comment_count( get_the_ID() ) . '</span>';
-						}
+						echo '<span class="single-post-title">' . get_the_title() . '</span>';
+						echo '<span class="single-post-readmore">' . __('Read more', 'boron') . '</span>';
 				echo '</div>';
+				echo '<div class="single-post-overlay"></div>';
 				echo '</div>';
 				echo '<input type="hidden" class="single-post-url" value="' . get_the_permalink() . '">';
 				echo '</header><!-- .entry-header -->';

@@ -41,6 +41,7 @@ global $boron_site_width;
 			endif;
 		?>
 	</div><!-- .content-wrapper -->
+	<?php if ( !function_exists('register_api_field') ) { boron_paging_nav(); } ?>
 	<input type="hidden" id="current-post-page" value="2">
 	<input type="hidden" id="current-page-url" value="">
 	<div id="img-preloader"></div>

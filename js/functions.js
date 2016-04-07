@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
 				} else {
 					$new_posts += '<span class="post-no-image"></span>';
 				}
-				$new_posts += '<div class="single-post-meta">' + current_post.boron_extra.tag_list + '<span class="single-post-date icon-clock">' + current_post.boron_extra.date_ago + '</span><span class="single-post-like icon-chat">' + current_post.boron_extra.comments + '</span></div></div><input type="hidden" class="single-post-url" value="' + current_post.link + '"></header><script type="text/template" class="single-post-template">' + current_post.boron_extra.post_template + '</script><script type="text/template" class="single-post-side-template">' + current_post.boron_extra.post_side_template + '</script></article>';
+				$new_posts += '<div class="single-post-information">' + current_post.boron_extra.category_list + '<span class="single-post-title">' + current_post.title.rendered + '</span><span class="single-post-readmore">' + WP_API_Settings.read_more + '</span></div><div class="single-post-overlay"></div></div><input type="hidden" class="single-post-url" value="' + current_post.link + '"></header><script type="text/template" class="single-post-template">' + current_post.boron_extra.post_template + '</script><script type="text/template" class="single-post-side-template">' + current_post.boron_extra.post_side_template + '</script></article>';
 			});
 
 			// Preload images

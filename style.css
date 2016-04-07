@@ -3,8 +3,8 @@ Theme Name: Boron
 Theme URI: https://cohhe.com/project-view/boron/
 Author: Cohhe
 Author URI: https://cohhe.com/
-Description: Enhance your story experience, by leveraging the power of Boron Wordpress Theme, built especially for telling great stories. It is the only free WordPress theme fully compatible with the Aesop Story Engine.
-Version: 1.1
+Description: Enhance your story experience, by leveraging the power of Boron WordPress Theme, built especially for telling great stories. It is the only free WordPress theme fully compatible with the Aesop Story Engine.
+Version: 1.2
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -782,6 +782,97 @@ hr {
 	opacity: 1;
 }*/
 
+.single-post-information .category-link a {
+	text-decoration: none;
+}
+
+.single-post-information .category-link span {
+	margin-right: 5px;
+}
+
+.single-post-information .single-post-title {
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.single-post-information .single-post-readmore {
+	text-decoration: none;
+    margin-top: 5px;
+    position: absolute;
+    text-transform: uppercase;
+    bottom: 0px;
+    left: 10px;
+    font-size: 12px;
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.single-image-container:hover .single-post-information .single-post-readmore {
+	opacity: 1;
+    bottom: -20px;
+    left: 0;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.single-post-overlay {
+	position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    width: auto;
+    height: auto;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10%, 0);
+    -moz-transform: translate3d(0, 10%, 0);
+    -ms-transform: translate3d(0, 10%, 0);
+    -o-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0);
+    -webkit-transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    background: rgba(206, 92, 87, 0.9);
+}
+
+.single-image-container:hover .single-post-overlay {
+	opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.single-post-information {
+	position: absolute;
+    bottom: 20px;
+    left: 25px;
+	z-index: 2;
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+    -moz-transition: -moz-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5);
+}
+
+.single-image-container:hover .single-post-information {
+	-webkit-transform: translateY(-25px);
+    -moz-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    -o-transform: translateY(-25px);
+    transform: translateY(-25px);
+}
+
 .nav-single.blog .nav_button {
 	width: 50%;
 	float: left;
@@ -1522,6 +1613,9 @@ body .post-password-form input[type=submit]:hover {
 	color: #555;
 	cursor: pointer;
 	font-size: 1.5em;
+	line-height: 36px;
+	width: 45px;
+    height: 45px;
 }
 
 /* Loading */
@@ -2515,8 +2609,12 @@ body.single:not(.single-service) #primary {
 	color: #000;
 }
 
-.comments-container h3#reply-title {
+.single-post-side-comments .comments-container .comments-title {
 	color: #fff;
+}
+
+.comments-container h3#reply-title {
+	color: #000;
 }
 
 .comments-container .comments-title span {
@@ -2702,6 +2800,21 @@ article.hentry .more-link .meta-nav {
 	width: 100%;
 }
 
+.single-post-inner .comment-form-comment textarea,
+html body .comments-container .comment-form-top input {
+	border: 1px solid #ccc;
+}
+
+.single-post-inner .comments-container #submit {
+	border-color: #ccc;
+	color: #999;
+}
+
+.single-post-inner .comments-container #submit:hover {
+	border-color: #000;
+	color: #000;
+}
+
 body .comments-container .comment-form-top input {
 	font-size: 14px;
 	color: #828282;
@@ -2773,38 +2886,24 @@ body .comments-container textarea {
 .pagination a,
 .pagination span.page-numbers.current {
 	display: inline-block;
-	padding: 0px 14px;
+	padding: 0px 13px;
 	text-align: center;
 	height: 34px;
 	line-height: 34px;
 	position: relative;
 	float: left;
 	font-size: 14px;
-}
-
-.entry-content .page-links a:before,
-.entry-content .page-links > span:not(.page-links-title):before,
-.pagination a:before,
-.pagination span.page-numbers.current:before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: #e7e7e7;
-	border-right: 1px solid #dddddd;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	-webkit-transform: skew(-30deg);
-	-moz-transform: skew(-30deg);
-	-o-transform: skew(-30deg);
-	transform: skew(-30deg);
+	border: 1px solid #ccc;
+    color: #000;
+    margin: 0 1px;
+    text-decoration: none;
 }
 
 .entry-content .page-links > span:not(.page-links-title),
 .pagination span.page-numbers.current {
 	color: #4b494a;
 	font-weight: 600;
+	opacity: 0.7;
 }
 
 .pagination.loop-pagination a.prev {
@@ -2812,8 +2911,7 @@ body .comments-container textarea {
 	width: 31px;
 	text-align: center;
 	padding: 0;
-	background-color: #2698d7;
-	color: #fff;
+	color: #000;
 }
 
 .pagination.loop-pagination a.prev:before {
@@ -2824,25 +2922,12 @@ body .comments-container textarea {
 	border: none;
 }
 
-.pagination.loop-pagination a.prev:after {
-	content: '';
-	width: 0;
-	height: 0;
-	position: absolute;
-	top: 0;
-	right: -20px;
-	border-top: 0px solid transparent;
-	border-bottom: 34px solid transparent;
-	border-left: 20px solid #2698d7;
-}
-
 .pagination.loop-pagination a.next {
 	margin-left: 15px;
 	width: 31px;
 	text-align: center;
 	padding: 0;
-	background-color: #2698d7;
-	color: #fff;
+	color: #000;
 }
 
 .pagination.loop-pagination a.next:before {
@@ -2851,18 +2936,6 @@ body .comments-container textarea {
 	z-index: 2;
 	background-color: transparent;
 	border: none;
-}
-
-.pagination.loop-pagination a.next:after {
-	content: '';
-	width: 0;
-	height: 0;
-	position: absolute;
-	top: 0;
-	left: -20px;
-	border-top: 34px solid transparent;
-	border-bottom: 0px solid transparent;
-	border-right: 20px solid #2698d7;
 }
 
 .pagination.loop-pagination a.prev:before,
@@ -2878,11 +2951,6 @@ body .comments-container textarea {
 	-moz-transition: all ease-in-out 0.2s;
 	-o-transition: all ease-in-out 0.2s;
 	transition: all ease-in-out 0.2s;
-}
-
-.pagination.loop-pagination a.prev:hover,
-.pagination.loop-pagination a.next:hover {
-	background-color: #2083ba;
 }
 
 .pagination.loop-pagination a.prev:hover:after {

@@ -332,7 +332,8 @@ function boron_scripts() {
 			'home_url'       => home_url(),
 			'dates'          => boron_get_archive(),
 			'post_tax'       => boron_get_post_tax(),
-			'rest_api_status' => function_exists('register_api_field')
+			'rest_api_status' => function_exists('register_api_field'),
+			'read_more'      => __('Read more', 'boron')
 		)
 	);
 
@@ -400,6 +401,7 @@ function boron_get_extra_fields( $object, $field_name, $request ) {
 
 	$extra['image_src'] = $image_src;
 	$extra['tag_list'] = boron_tag_list( $object['id'], true );
+	$extra['category_list'] = boron_category_list( $object['id'], true );
 	$extra['date_ago'] = human_time_diff(get_the_time('U', $object['id']), current_time('timestamp')) .  ' '.__('ago', 'boron');
 	$extra['comments'] = boron_comment_count( $object['id'] );
 	$extra['post_template'] = boron_get_single_post( $object['id'] );
@@ -521,6 +523,62 @@ function boron_get_single_post_side( $post_id ) {
 	}
 
 	return $output;
+}
+
+
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ * @since honos 1.0
+ *
+ * @return void
+ */
+if ( ! function_exists( 'boron_paging_nav' ) ) {
+	function boron_paging_nav() {
+		// Don't print empty markup if there's only one page.
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return;
+		}
+
+		$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+		$pagenum_link = html_entity_decode( get_pagenum_link() );
+		$query_args   = array();
+		$url_parts    = explode( '?', $pagenum_link );
+
+		if ( isset( $url_parts[1] ) ) {
+			wp_parse_str( $url_parts[1], $query_args );
+		}
+
+		$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
+		$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+
+		$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+		$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
+
+		// Set up paginated links.
+		$links = paginate_links( array(
+			'base'     => $pagenum_link,
+			'format'   => $format,
+			'total'    => $GLOBALS['wp_query']->max_num_pages,
+			'current'  => $paged,
+			'mid_size' => 1,
+			'add_args' => array_map( 'urlencode', $query_args ),
+			'prev_text' => '',
+			'next_text' => '',
+		) );
+
+		if ( $links ) :
+
+		?>
+		<div class="clearfix"></div>
+		<nav class="navigation paging-navigation" role="navigation">
+			<div class="pagination loop-pagination">
+				<?php echo $links; ?>
+			</div><!-- .pagination -->
+		</nav><!-- .navigation -->
+		<?php
+		endif;
+	}
 }
 
 /**

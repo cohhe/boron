@@ -1,5 +1,12 @@
 Boron changelog
 
+= Version 1.2 =
+* Fixed some comment form styling
+* Added pagination if rest api plugin is disabled
+* Fixed search bubble size
+* Updated translation files
+* Improved post hover
+
 = Version 1.1 =
 * Some fixes and improvements
 * Escaped values
