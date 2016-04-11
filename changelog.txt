@@ -1,5 +1,8 @@
 Boron changelog
 
+= Version 1.3 =
+* Fixed some responsiveness issues
+
 = Version 1.2 =
 * Fixed some comment form styling
 * Added pagination if rest api plugin is disabled

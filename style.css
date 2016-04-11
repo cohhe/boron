@@ -4,7 +4,7 @@ Theme URI: https://cohhe.com/project-view/boron/
 Author: Cohhe
 Author URI: https://cohhe.com/
 Description: Boron is an amazing free WordPress blog theme. It is designed to be super fast as it loads content over Ajax which makes it technologically innovative and well structured. It is well suited for These themes are well suited for personal, adventure, fashion, food, travel and any other awesome blog.
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -1035,7 +1035,7 @@ hr {
 
 .single-post-inner {
 	max-width: 1200px;
-	margin: 60px auto;
+	margin: 80px auto;
 	background-color: #fff;
 	padding: 15px;
 	border-radius: 10px;
@@ -1092,6 +1092,7 @@ hr {
 	width: 100%;
 	height: 100%;
 	opacity: 0;
+	top: 0;
 
 	-webkit-transition: opacity 0.5s linear;
 	-moz-transition: opacity 0.5s linear;
@@ -1112,7 +1113,7 @@ hr {
 	height: 35px;
 	position: fixed;
 	z-index: 3;
-	top: 10px;
+	top: 20px;
 	right: 15px;
 	opacity: 0;
 	cursor: pointer;
@@ -1201,7 +1202,7 @@ body.search .single-post-close {
 }
 
 .admin-bar .single-post-close {
-	top: 42px;
+	top: 52px;
 }
 
 .pull-content-back .single-post-inner,
@@ -2617,6 +2618,10 @@ body.single:not(.single-service) #primary {
 	color: #000;
 }
 
+.single-post-side-comments .comments-container h3#reply-title {
+	color: #fff;
+}
+
 .comments-container .comments-title span {
 	font-weight: 700;
 }
@@ -3026,6 +3031,51 @@ article .entry-content table tr:nth-child(even) {
 
 /* Responsiveness */
 
+@media (max-width: 1400px) {
+	#main .single-post-side {
+		position: relative;
+		width: 100%;
+		max-width: none;
+		border-radius: 0;
+		background-color: rgba(0,0,0,0.5);
+		-webkit-transform: translate(0px, -10%);
+	    -moz-transform: translate(0px, -10%);
+	    -o-transform: translate(0px, -10%);
+	    -ms-transform: translate(0px, -10%);
+	    transform: translate(0px, -10%);
+	}
+
+	.single-open-posted,
+	.tag-link .tag-text,
+	.single-open-comment,
+	.category-link .category-text {
+		font-size: 2.2em;
+		color: #fff;
+	}
+
+	.single-post-side span,
+	.single-post-side .tag-link,
+	.tag-link .tag-text,
+	.single-post-side .category-link,
+	.category-link .category-text,
+	.single-open-posted,
+	.single-open-comment,
+	.single-post-share {
+		text-align: center;
+		color: #fff;
+	}
+
+	.single-post-share a {
+		font-size: 3.5em;
+		color: #fff;
+	}
+
+	.single-post-side .tag-link a,
+	.single-post-side .category-link a {
+		color: #fff;
+	}
+}
+
 @media (max-width: 1200px) {
 	body .main-content article {
 		width: 33.33%;
@@ -3071,6 +3121,10 @@ article .entry-content table tr:nth-child(even) {
 }
 
 @media (max-width: 768px) {
+	.main-search {
+		text-align: center;
+	}
+
 	.site-main .site-navigation {
 		position: relative;
 		width: 100%;
@@ -3106,41 +3160,7 @@ article .entry-content table tr:nth-child(even) {
 	}
 
 	.admin-bar .single-post-close {
-		top: 46px;
-	}
-
-	.single-post-side {
-		position: relative;
-		width: 100%;
-		max-width: none;
-		border-radius: 0;
-		background-color: rgba(0,0,0,0.5);
-	}
-
-	.single-open-posted,
-	.tag-link .tag-text,
-	.single-open-comment {
-		font-size: 2.2em;
-		color: #fff;
-	}
-
-	.single-post-share a {
-		font-size: 3.5em;
-		color: #fff;
-	}
-
-	.single-post-side .tag-link a {
-		color: #fff;
-	}
-
-	.single-post-side span,
-	.single-post-side .tag-link,
-	.single-open-posted,
-	.tag-link .tag-text,
-	.single-open-comment,
-	.single-post-share {
-		text-align: center;
-		color: #fff;
+		top: 56px;
 	}
 
 	.single-post-side-comments {
@@ -3164,6 +3184,10 @@ article .entry-content table tr:nth-child(even) {
 	.main-search-form .search-form {
 		width: 100%;
 		min-width: auto;
+	}
+
+	.main-search {
+		right: -10px;
 	}
 }
 
