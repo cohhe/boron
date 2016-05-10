@@ -32,6 +32,7 @@ global $boron_site_width;
 			endif;
 		?>
 	</div><!-- .content-wrapper -->
+	<?php if ( !function_exists('register_api_field') ) { the_posts_pagination( array( 'screen_reader_text' => ' ' ) ); } ?>
 	<input type="hidden" id="current-post-page" value="2">
 	<input type="hidden" id="current-page-url" value="">
 	<div id="img-preloader"></div>

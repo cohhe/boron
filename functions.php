@@ -112,16 +112,19 @@ if ( ! function_exists( 'boron_setup' ) ) :
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
 		add_theme_support( 'title-tag' );
-		add_theme_support( 'custom-header', array( 'width' => '128', 'height' => '128' ) );
+
+		add_theme_support( 'custom-logo', array( 'width' => '128', 'height' => '128' ) );
 	}
 endif; // boron_setup
 add_action( 'after_setup_theme', 'boron_setup' );
 
 // Admin CSS
-function boron_admin_css() {
-	wp_enqueue_style( 'boron-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
+function boron_admin_css( $hook ) {
+	if ( $hook == 'post.php' ) {
+		wp_enqueue_style( 'boron-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
+	}
 }
-add_action('admin_head','boron_admin_css');
+add_action('admin_enqueue_scripts','boron_admin_css');
 
 /**
  * Returns list of tags for Boron 1.0.
@@ -295,8 +298,8 @@ function boron_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
 
 	// Add Google fonts
-	wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Proxima+Nova:300,400,600,700&subset=latin');
-	wp_enqueue_style( 'googleFonts');
+	wp_register_style('boron-googleFonts', '//fonts.googleapis.com/css?family=Proxima+Nova:300,400,600,700&subset=latin');
+	wp_enqueue_style( 'boron-googleFonts');
 
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.2' );
@@ -329,7 +332,7 @@ function boron_scripts() {
 			'nonce'          => wp_create_nonce( 'wp_rest' ),
 			'posts_per_page' => get_option('posts_per_page'),
 			'post_comments'  => get_theme_mod('boron_comment_location', 'side'),
-			'home_url'       => home_url(),
+			'home_url'       => esc_url( home_url() ),
 			'dates'          => boron_get_archive(),
 			'post_tax'       => boron_get_post_tax(),
 			'rest_api_status' => function_exists('register_api_field'),
@@ -525,62 +528,6 @@ function boron_get_single_post_side( $post_id ) {
 	return $output;
 }
 
-
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @since honos 1.0
- *
- * @return void
- */
-if ( ! function_exists( 'boron_paging_nav' ) ) {
-	function boron_paging_nav() {
-		// Don't print empty markup if there's only one page.
-		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-			return;
-		}
-
-		$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-		$pagenum_link = html_entity_decode( get_pagenum_link() );
-		$query_args   = array();
-		$url_parts    = explode( '?', $pagenum_link );
-
-		if ( isset( $url_parts[1] ) ) {
-			wp_parse_str( $url_parts[1], $query_args );
-		}
-
-		$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-		$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
-
-		$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-		$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
-
-		// Set up paginated links.
-		$links = paginate_links( array(
-			'base'     => $pagenum_link,
-			'format'   => $format,
-			'total'    => $GLOBALS['wp_query']->max_num_pages,
-			'current'  => $paged,
-			'mid_size' => 1,
-			'add_args' => array_map( 'urlencode', $query_args ),
-			'prev_text' => '',
-			'next_text' => '',
-		) );
-
-		if ( $links ) :
-
-		?>
-		<div class="clearfix"></div>
-		<nav class="navigation paging-navigation" role="navigation">
-			<div class="pagination loop-pagination">
-				<?php echo $links; ?>
-			</div><!-- .pagination -->
-		</nav><!-- .navigation -->
-		<?php
-		endif;
-	}
-}
-
 /**
  * Returns archive date for Boron 1.0.
  *
@@ -627,11 +574,13 @@ function boron_get_post_tax() {
 }
 
 // Admin Javascript
-add_action( 'admin_enqueue_scripts', 'boron_admin_scripts' );
-function boron_admin_scripts() {
-	wp_register_script('master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
-	wp_enqueue_script('master');
+function boron_admin_scripts( $hook ) {
+	if ( $hook == 'post.php' ) {
+		wp_register_script('master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
+		wp_enqueue_script('master');
+	}
 }
+add_action( 'admin_enqueue_scripts', 'boron_admin_scripts' );
 
 if ( ! function_exists( 'boron_the_attached_image' ) ) :
 	/**

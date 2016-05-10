@@ -46,16 +46,14 @@ $search_string = '';
 				$navigation_style = 'background-color: rgba(0,0,0,0.5);';
 			}
 
-			$logo = get_custom_header();
-			$logo = $logo->url;
 			$title = get_theme_mod('boron_nav_title');
 			$description = get_theme_mod('boron_nav_description');
 		?>
-		<?php if ( $logo ) { ?>
-			<div class="site-small-logo">
-				<img src="<?php echo $logo; ?>" alt="<?php _e('Site logo', 'boron'); ?>">
-			</div>
-		<?php } ?>
+		<div class="site-small-logo">
+			<?php if ( function_exists( 'the_custom_logo' ) ) {
+				the_custom_logo();
+			} ?>
+		</div>
 		<?php if ( get_option('show_on_front') == 'posts' ) { ?>
 			<span class="single-post-close"><span class="close-icon"></span></span>
 		<?php } else if ( get_queried_object_id() != get_option('page_on_front') ) { ?>
@@ -64,11 +62,11 @@ $search_string = '';
 		<div class="site-navigation" style="<?php echo $navigation_style; ?>">
 			<div class="navigation-wrapper">
 				<span class="main-search icon-search"></span>
-				<?php if ( $logo ) { ?>
-					<div class="site-logo">
-						<a href="<?php echo home_url(); ?>"><img src="<?php echo $logo; ?>" alt="<?php _e('Site logo', 'boron'); ?>"></a>
-					</div>
-				<?php } ?>
+				<div class="site-logo">
+					<?php if ( function_exists( 'the_custom_logo' ) ) {
+						the_custom_logo();
+					} ?>
+				</div>
 				<?php if ( $title ) { ?>
 					<h1 class="navigation-title"><?php echo esc_html($title); ?></h1>
 				<?php } ?>
@@ -76,11 +74,12 @@ $search_string = '';
 					<p class="navigation-description"><?php echo esc_html($description); ?></p>
 				<?php } ?>
 			</div>
-			<div class="navigation-copyright">Theme by <a href="https://cohhe.com" target="_blank">Cohhe</a></div>
+			<div class="navigation-copyright"><?php _e('Theme by', 'boron'); ?> <a href="https://cohhe.com" target="_blank">Cohhe</a></div>
 			<?php if ( function_exists('boron_navigation_social') ) { echo boron_navigation_social(); } ?>
 		</div>
 		<div class="main-search-form">
-			<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+		<!-- 	<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Type and Press Enter to Search', 'placeholder', 'boron' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'boron' ) ?>" />
-			</form>
+			</form> -->
+			<?php get_search_form(); ?>
 		</div>

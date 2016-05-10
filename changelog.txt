@@ -1,5 +1,15 @@
 Boron changelog
 
+= Version 1.4 =
+* Removed social links from customizer
+* Added core WP logo feature
+* Correctly enqueue admin styles/scripts
+* Prefixed styles
+* Used WP core function for pagination
+* Localized header "Theme by" text
+* Fixed search form at header
+* Escaped home_url() at header
+
 = Version 1.3 =
 * Fixed some responsiveness issues
 
