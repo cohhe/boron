@@ -74,7 +74,7 @@ $search_string = '';
 					<p class="navigation-description"><?php echo esc_html($description); ?></p>
 				<?php } ?>
 			</div>
-			<div class="navigation-copyright"><?php _e('Theme by', 'boron'); ?> <a href="https://cohhe.com" target="_blank">Cohhe</a></div>
+			<div class="navigation-copyright"><?php printf( __( 'Theme by %s', 'boron' ), '<a href="https://cohhe.com" target="_blank">Cohhe</a>' ); ?></div>
 			<?php if ( function_exists('boron_navigation_social') ) { echo boron_navigation_social(); } ?>
 		</div>
 		<div class="main-search-form">
