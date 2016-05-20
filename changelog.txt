@@ -1,5 +1,9 @@
 Boron changelog
 
+= Version 1.5 =
+* Made copyright translatable
+* Removed commented code
+
 = Version 1.4 =
 * Removed social links from customizer
 * Added core WP logo feature
