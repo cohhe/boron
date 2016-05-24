@@ -1,5 +1,9 @@
 Boron changelog
 
+= Version 1.6 =
+* Moved navigation buttons at costomizer to plugin
+* Removed Menu panel from customizer
+
 = Version 1.5 =
 * Made copyright translatable
 * Removed commented code

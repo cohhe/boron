@@ -30,8 +30,6 @@ function boron_customize_register( $wp_customize ) {
 	// Rename the label to "Display Site Title & Tagline" in order to make this option extra clear.
 	$wp_customize->get_control( 'display_header_text' )->label = __( 'Display Site Title &amp; Tagline', 'boron' );
 
-	// $wp_customize->get_section( 'header_image' )->title = __( 'Side navigation logo', 'boron' );
-
 	// Add General setting panel and configure settings inside it
 	$wp_customize->add_panel( 'boron_general_panel', array(
 		'priority'       => 250,
@@ -188,122 +186,6 @@ function boron_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Button #1
-	$wp_customize->add_section( 'boron_navigation_button1', array(
-		'priority'       => 50,
-		'capability'     => 'edit_theme_options',
-		'title'          => __( 'Button #1' , 'boron'),
-		'description'    => __( 'Settings for your button.' , 'boron'),
-		'panel'          => 'boron_navigation_panel'
-	) );
-
-	$wp_customize->add_setting( 'boron_nav_button1_text', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button1_text',
-		array(
-			'label'      => __( 'Button #1 text', 'boron' ),
-			'section'    => 'boron_navigation_button1',
-			'type'       => 'text',
-		)
-	);
-
-	$wp_customize->add_setting( 'boron_nav_button1_link', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button1_link',
-		array(
-			'label'      => __( 'Button #1 link', 'boron' ),
-			'section'    => 'boron_navigation_button1',
-			'type'       => 'text',
-		)
-	);
-
-	// Button #2
-	$wp_customize->add_section( 'boron_navigation_button2', array(
-		'priority'       => 60,
-		'capability'     => 'edit_theme_options',
-		'title'          => __( 'Button #2' , 'boron'),
-		'description'    => __( 'Settings for your button.' , 'boron'),
-		'panel'          => 'boron_navigation_panel'
-	) );
-
-	$wp_customize->add_setting( 'boron_nav_button2_text', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button2_text',
-		array(
-			'label'      => __( 'Button #2 text', 'boron' ),
-			'section'    => 'boron_navigation_button2',
-			'type'       => 'text',
-		)
-	);
-
-	$wp_customize->add_setting( 'boron_nav_button2_link', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button2_link',
-		array(
-			'label'      => __( 'Button #2 link', 'boron' ),
-			'section'    => 'boron_navigation_button2',
-			'type'       => 'text',
-		)
-	);
-
-	// Button #3
-	$wp_customize->add_section( 'boron_navigation_button3', array(
-		'priority'       => 70,
-		'capability'     => 'edit_theme_options',
-		'title'          => __( 'Button #3' , 'boron'),
-		'description'    => __( 'Settings for your button.' , 'boron'),
-		'panel'          => 'boron_navigation_panel'
-	) );
-
-	$wp_customize->add_setting( 'boron_nav_button3_text', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button3_text',
-		array(
-			'label'      => __( 'Button #3 text', 'boron' ),
-			'section'    => 'boron_navigation_button3',
-			'type'       => 'text',
-		)
-	);
-
-	$wp_customize->add_setting( 'boron_nav_button3_link', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button3_link',
-		array(
-			'label'      => __( 'Button #3 link', 'boron' ),
-			'section'    => 'boron_navigation_button3',
-			'type'       => 'text',
-		)
-	);
-
-	// Button #4
-	$wp_customize->add_section( 'boron_navigation_button4', array(
-		'priority'       => 80,
-		'capability'     => 'edit_theme_options',
-		'title'          => __( 'Button #4' , 'boron'),
-		'description'    => __( 'Settings for your button.' , 'boron'),
-		'panel'          => 'boron_navigation_panel'
-	) );
-
-	$wp_customize->add_setting( 'boron_nav_button4_text', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button4_text',
-		array(
-			'label'      => __( 'Button #4 text', 'boron' ),
-			'section'    => 'boron_navigation_button4',
-			'type'       => 'text',
-		)
-	);
-
-	$wp_customize->add_setting( 'boron_nav_button4_link', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-	$wp_customize->add_control(
-		'boron_nav_button4_link',
-		array(
-			'label'      => __( 'Button #4 link', 'boron' ),
-			'section'    => 'boron_navigation_button4',
-			'type'       => 'text',
-		)
-	);
-
 	// Social links
 	$wp_customize->add_section( new boron_Customized_Section( $wp_customize, 'boron_social_links', array(
 		'priority'       => 300,
@@ -323,6 +205,17 @@ function boron_customize_register( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'boron_customize_register' );
+
+add_action( 'customize_register', function( $wp_customize ) {
+        /** @var WP_Customize_Manager $wp_customize */
+        remove_action( 'customize_controls_enqueue_scripts', array( $wp_customize->nav_menus, 'enqueue_scripts' ) );
+        remove_action( 'customize_register', array( $wp_customize->nav_menus, 'customize_register' ), 11 );
+        remove_filter( 'customize_dynamic_setting_args', array( $wp_customize->nav_menus, 'filter_dynamic_setting_args' ) );
+        remove_filter( 'customize_dynamic_setting_class', array( $wp_customize->nav_menus, 'filter_dynamic_setting_class' ) );
+        remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize->nav_menus, 'print_templates' ) );
+        remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize->nav_menus, 'available_items_template' ) );
+        remove_action( 'customize_preview_init', array( $wp_customize->nav_menus, 'customize_preview_init' ) );
+}, 10 );
 
 if ( class_exists( 'WP_Customize_Section' ) && !class_exists( 'boron_Customized_Section' ) ) {
 	class boron_Customized_Section extends WP_Customize_Section {
