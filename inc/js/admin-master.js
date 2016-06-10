@@ -14,4 +14,17 @@ jQuery( document ).ready( function( $ ) {
 			$(this).parent().parent().find('.rpp_expert-panel').hide();
 		}
 	});
+
+	jQuery(document).on('click', '.boron-rating-dismiss', function() {
+		jQuery.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: { 
+				'action': 'boron_dismiss_notice'
+			},
+			success: function(data) {
+				jQuery('.boron-rating-notice').remove();
+			}
+		});
+	});
 });
