@@ -120,9 +120,7 @@ add_action( 'after_setup_theme', 'boron_setup' );
 
 // Admin CSS
 function boron_admin_css( $hook ) {
-	if ( $hook == 'post.php' ) {
-		wp_enqueue_style( 'boron-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
-	}
+	wp_enqueue_style( 'boron-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
 }
 add_action('admin_enqueue_scripts','boron_admin_css');
 
@@ -575,10 +573,7 @@ function boron_get_post_tax() {
 
 // Admin Javascript
 function boron_admin_scripts( $hook ) {
-	if ( $hook == 'post.php' ) {
-		wp_register_script('master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
-		wp_enqueue_script('master');
-	}
+	wp_enqueue_script('master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
 }
 add_action( 'admin_enqueue_scripts', 'boron_admin_scripts' );
 
@@ -824,3 +819,41 @@ function boron_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'boron_register_required_plugins' );
+
+function boron_admin_rating_notice() {
+	$user = wp_get_current_user();
+	?>
+	<div class="boron-rating-notice">
+		<span class="boron-notice-left">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/logo-square.png" alt="">
+		</span>
+		<div class="boron-notice-center">
+			<p>Hi there, <?php echo $user->data->display_name; ?>, we noticed that you've been using Boron for a while now.</p>
+			<p>We spent many hours developing this free theme for you and we would appriciate if you supported us by rating it!</p>
+		</div>
+		<div class="boron-notice-right">
+			<a href="https://wordpress.org/support/view/theme-reviews/boron?rate=5#postform" class="button button-primary button-large boron-rating-rate">Rate at WordPress</a>
+			<a href="javascript:void(0)" class="button button-large preview boron-rating-dismiss">No, thanks</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<?php
+}
+if ( get_option('boron_rating_notice') && get_option('boron_rating_notice') != 'hide' && time() - get_option('boron_rating_notice') > 432000 ) {
+	add_action( 'admin_notices', 'boron_admin_rating_notice' );
+}
+
+function boron_dismiss_rating_notice() {
+	update_option('boron_rating_notice', 'hide');
+
+	die(0);
+}
+add_action( 'wp_ajax_nopriv_boron_dismiss_notice', 'boron_dismiss_rating_notice' );
+add_action( 'wp_ajax_boron_dismiss_notice', 'boron_dismiss_rating_notice' );
+
+function boron_theme_activated() {
+	if ( !get_option('boron_rating_notice') ) {
+		update_option('boron_rating_notice', time());
+	}
+}
+add_action('after_switch_theme', 'boron_theme_activated');
