@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Boron v1.4\n"
+"Project-Id-Version: Boron v1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-05-20 12:16:32+0000\n"
+"PO-Revision-Date: 2016-05-24 10:06:05+0000\n"
 "Last-Translator: smaids <smaids2007@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -117,24 +117,24 @@ msgstr ""
 msgid "Display Site Title &amp; Tagline"
 msgstr ""
 
-#: inc/customizer.php:418
+#: inc/customizer.php:311
 #@ boron
 msgid "Boron 1.0"
 msgstr ""
 
-#: inc/customizer.php:421
+#: inc/customizer.php:314
 #, php-format
 #@ boron
 msgid "The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by the <a href=\"%1$s\">featured</a> tag; you can change the tag and layout in <a href=\"%2$s\">Appearance &rarr; Customize</a>. If no posts match the tag, <a href=\"%3$s\">sticky posts</a> will be displayed instead."
 msgstr ""
 
-#: inc/customizer.php:422
+#: inc/customizer.php:315
 #, php-format
 #@ boron
 msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Boron 1.0 uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:316
 #, php-format
 #@ boron
 msgid "For an in-depth tutorial, and more tips and tricks, visit the <a href=\"%s\">Boron 1.0 documentation</a>."
@@ -146,7 +146,7 @@ msgstr ""
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr ""
 
-#: inc/customizer.php:361
+#: inc/customizer.php:254
 #@ boron
 msgid "Documentation"
 msgstr ""
@@ -162,32 +162,32 @@ msgid "Type"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:303
-#: functions.php:794
+#: functions.php:803
 #@ boron
 msgid "Install Required Plugins"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:304
-#: functions.php:795
+#: functions.php:804
 #@ boron
 msgid "Install Plugins"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:305
-#: functions.php:796
+#: functions.php:805
 #, php-format
 #@ boron
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:306
-#: functions.php:797
+#: functions.php:806
 #@ boron
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:308
-#: functions.php:798
+#: functions.php:807
 #, php-format
 #@ boron
 msgid "This theme requires the following plugin: %1$s."
@@ -196,7 +196,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:313
-#: functions.php:799
+#: functions.php:808
 #, php-format
 #@ boron
 msgid "This theme recommends the following plugin: %1$s."
@@ -213,7 +213,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:323
-#: functions.php:804
+#: functions.php:813
 #, php-format
 #@ boron
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
@@ -238,7 +238,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:338
-#: functions.php:801
+#: functions.php:810
 #, php-format
 #@ boron
 msgid "The following required plugin is currently inactive: %1$s."
@@ -247,7 +247,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:343
-#: functions.php:802
+#: functions.php:811
 #, php-format
 #@ boron
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -264,7 +264,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:353
-#: functions.php:806
+#: functions.php:815
 #@ boron
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
@@ -286,7 +286,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:368
-#: functions.php:808
+#: functions.php:817
 #@ boron
 msgid "Return to Required Plugins Installer"
 msgstr ""
@@ -298,7 +298,7 @@ msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:370
 #: functions/tgm-activation/class-tgm-plugin-activation.php:3047
-#: functions.php:809
+#: functions.php:818
 #@ boron
 msgid "Plugin activated successfully."
 msgstr ""
@@ -663,7 +663,7 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: functions.php:800
+#: functions.php:809
 #, php-format
 #@ boron
 msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
@@ -671,7 +671,7 @@ msgid_plural "Sorry, but you do not have the correct permissions to install the 
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:803
+#: functions.php:812
 #, php-format
 #@ boron
 msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
@@ -679,7 +679,7 @@ msgid_plural "Sorry, but you do not have the correct permissions to activate the
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:805
+#: functions.php:814
 #, php-format
 #@ boron
 msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
@@ -687,36 +687,36 @@ msgid_plural "Sorry, but you do not have the correct permissions to update the %
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:807
+#: functions.php:816
 #@ boron
 msgid "Activate installed plugin"
 msgid_plural "Activate installed plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:810
+#: functions.php:819
 #, php-format
 #@ boron
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: inc/customizer.php:39
+#: inc/customizer.php:37
 #@ boron
 msgid "General settings"
 msgstr ""
 
-#: inc/customizer.php:40
+#: inc/customizer.php:38
 #@ boron
 msgid "You can configure your general theme settings here"
 msgstr ""
 
-#: inc/customizer.php:55
-#: inc/customizer.php:65
+#: inc/customizer.php:53
+#: inc/customizer.php:63
 #@ boron
 msgid "Scroll to top"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:54
 #@ boron
 msgid "Do you want to enable \"Scroll to Top\" button?"
 msgstr ""
@@ -796,96 +796,68 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: inc/customizer.php:47
+#: inc/customizer.php:45
 #@ boron
 msgid "Side navigation settings"
 msgstr ""
 
-#: inc/customizer.php:48
+#: inc/customizer.php:46
 #@ boron
 msgid "You can configure your theme side navigation settings here."
 msgstr ""
 
-#: inc/customizer.php:75
-#: inc/customizer.php:83
+#: inc/customizer.php:73
+#: inc/customizer.php:81
 #@ boron
 msgid "Post background"
 msgstr ""
 
-#: inc/customizer.php:76
+#: inc/customizer.php:74
 #@ boron
 msgid "Do you want your own post background? You can change it here."
 msgstr ""
 
-#: inc/customizer.php:92
+#: inc/customizer.php:90
 #@ boron
 msgid "Post comments"
 msgstr ""
 
-#: inc/customizer.php:93
+#: inc/customizer.php:91
 #@ boron
 msgid "Choose where to show post comments."
 msgstr ""
 
-#: inc/customizer.php:138
-#: inc/customizer.php:146
+#: inc/customizer.php:136
+#: inc/customizer.php:144
 #@ boron
 msgid "Navigation background"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:137
 #@ boron
 msgid "Do you want your own navigation background? You can change it here."
 msgstr ""
 
-#: inc/customizer.php:155
-#: inc/customizer.php:165
+#: inc/customizer.php:153
+#: inc/customizer.php:163
 #@ boron
 msgid "Navigation title"
 msgstr ""
 
-#: inc/customizer.php:156
+#: inc/customizer.php:154
 #@ boron
 msgid "Title for the side navigation."
 msgstr ""
 
-#: inc/customizer.php:175
-#: inc/customizer.php:185
+#: inc/customizer.php:173
+#: inc/customizer.php:183
 #@ boron
 msgid "Navigation description"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:174
 #@ boron
 msgid "Description for the side navigation."
-msgstr ""
-
-#: inc/customizer.php:195
-#@ boron
-msgid "Button #1"
-msgstr ""
-
-#: inc/customizer.php:196
-#: inc/customizer.php:225
-#: inc/customizer.php:254
-#: inc/customizer.php:283
-#@ boron
-msgid "Settings for your button."
-msgstr ""
-
-#: inc/customizer.php:224
-#@ boron
-msgid "Button #2"
-msgstr ""
-
-#: inc/customizer.php:253
-#@ boron
-msgid "Button #3"
-msgstr ""
-
-#: inc/customizer.php:282
-#@ boron
-msgid "Button #4"
 msgstr ""
 
 #: comments.php:69
@@ -921,60 +893,20 @@ msgstr ""
 msgid "Next post"
 msgstr ""
 
-#: inc/customizer.php:101
+#: inc/customizer.php:99
 #@ boron
 msgid "Post comments position"
 msgstr ""
 
-#: inc/customizer.php:112
-#: inc/customizer.php:121
+#: inc/customizer.php:110
+#: inc/customizer.php:119
 #@ boron
 msgid "Post grid size"
 msgstr ""
 
-#: inc/customizer.php:113
+#: inc/customizer.php:111
 #@ boron
 msgid "Choose how many columns will there be at the post grid."
-msgstr ""
-
-#: inc/customizer.php:204
-#@ boron
-msgid "Button #1 text"
-msgstr ""
-
-#: inc/customizer.php:214
-#@ boron
-msgid "Button #1 link"
-msgstr ""
-
-#: inc/customizer.php:233
-#@ boron
-msgid "Button #2 text"
-msgstr ""
-
-#: inc/customizer.php:243
-#@ boron
-msgid "Button #2 link"
-msgstr ""
-
-#: inc/customizer.php:262
-#@ boron
-msgid "Button #3 text"
-msgstr ""
-
-#: inc/customizer.php:272
-#@ boron
-msgid "Button #3 link"
-msgstr ""
-
-#: inc/customizer.php:291
-#@ boron
-msgid "Button #4 text"
-msgstr ""
-
-#: inc/customizer.php:301
-#@ boron
-msgid "Button #4 link"
 msgstr ""
 
 #: header.php:77

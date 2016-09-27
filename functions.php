@@ -319,7 +319,7 @@ function boron_scripts() {
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.min.css', array() );
 
 	wp_enqueue_script( 'jquery.isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'jquery.imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'jquery-imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array( 'jquery' ), '', true );
 	
 
 	wp_enqueue_script( 'jquery-ui-draggable' );
