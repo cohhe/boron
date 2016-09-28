@@ -1,5 +1,8 @@
 Boron changelog
 
+= Version 1.7 =
+* Fixed imagesloaded script issue
+
 = Version 1.6 =
 * Moved navigation buttons at costomizer to plugin
 * Removed Menu panel from customizer
