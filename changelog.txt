@@ -1,5 +1,8 @@
 Boron changelog
 
+= Version 1.7.1 =
+* Checked WordPress 4.8 compatibility
+
 = Version 1.7 =
 * Fixed imagesloaded script issue
 
